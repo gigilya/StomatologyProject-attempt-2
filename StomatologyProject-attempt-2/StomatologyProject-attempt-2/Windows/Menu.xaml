@@ -1,0 +1,81 @@
+﻿<Window x:Class="StomatologyProject_attempt_2.Windows.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StomatologyProject_attempt_2.Windows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"    WindowStartupLocation="CenterScreen"
+    Title="Главное меню" Width="550" Height="700" MinHeight="650" MinWidth="450">
+    <Grid>
+        <Canvas Height="60" VerticalAlignment="Top" Grid.ColumnSpan="4" >
+            <Image Source="\Resurs\toothbrush-paste.png" 
+           HorizontalAlignment="Center" 
+           Height="60" 
+           VerticalAlignment="Top"/>
+            <Label Content="Клуб зубастиков" 
+           Canvas.Left="65" 
+           Canvas.Top="18" 
+           HorizontalAlignment="Center" 
+           VerticalAlignment="Top" 
+           FontSize="16" 
+           FontFamily="Arial" 
+           FontWeight="Bold"/>
+        </Canvas>
+        <StackPanel VerticalAlignment="Center">
+            <Button x:Name="DoctorButton"
+            Click="DoctorButton_Click"
+            Content="Врачи"
+            VerticalAlignment="Top" 
+            MinWidth="160" 
+            MaxWidth="400" 
+            MinHeight="60" 
+            HorizontalAlignment="Center" 
+            Margin="10" Background="#FF698AFF" BorderBrush="#FF698AFF" FontFamily="Arial" FontSize="16"/>
+            <Button x:Name="AssistanButton"
+            Click="AssistanButton_Click"
+            Content="Ассистенты" 
+            VerticalAlignment="Bottom" 
+            MinWidth="160" 
+            MinHeight="60" 
+            HorizontalAlignment="Center" 
+            Margin="10" Background="#FF698AFF" BorderBrush="#FF698AFF" FontFamily="Arial" FontSize="16"/>
+            <Button x:Name="PatientButton"
+            Click="PatientButton_Click"
+            Content="Пациенты"
+            VerticalAlignment="Top" 
+            MinWidth="160" 
+            MinHeight="60" 
+            Cursor="Hand" 
+            HorizontalAlignment="Center" 
+            Margin="10" Background="#FF698AFF" BorderBrush="#FF698AFF" FontFamily="Arial" FontSize="16"/>
+            <Button x:Name="ProcedureButton"
+            Click="ProcedureButton_Click"
+            Content="Процедуры" 
+            MinWidth="160" 
+            MaxWidth="400" 
+            MinHeight="60" 
+            VerticalAlignment="Bottom" 
+            HorizontalAlignment="Center" 
+            Margin="10" Background="#FF698AFF" BorderBrush="#FF698AFF" FontFamily="Arial" FontSize="16"/>
+            <Button x:Name="EntryButton"
+            Click="EntryButton_Click"    
+            Content="Запись"
+            MinWidth="160" 
+            MaxWidth="400" 
+            MinHeight="60" 
+            VerticalAlignment="Bottom" 
+            HorizontalAlignment="Center" 
+            Margin="10" Background="#FF698AFF" BorderBrush="#FF698AFF" FontFamily="Arial" FontSize="16"/>
+            <Button x:Name="SpecializationButton"
+            Click="SpecializationButton_Click"    
+            Content="Специальность"
+            MinWidth="160" 
+            MaxWidth="400" 
+            MinHeight="60" 
+            VerticalAlignment="Bottom" 
+            HorizontalAlignment="Center" 
+            Margin="10" Background="#FF698AFF" BorderBrush="#FF698AFF" FontFamily="Arial" FontSize="16"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace StomatologyProject.ViewModels
 {
-    internal class Class7
+    public class UserViewModel
     {
+        public long Id { get; set; }
+        public string Login { get; set; }
+        public string Passworded { get; set; }
+        public List<DoctorEntity> Doctor { get; set; }
+        public List<AssistantEntity> Assistant_ { get; set; }
     }
 }

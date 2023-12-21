@@ -6,7 +6,7 @@ namespace StomatologyProject
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ProcedureEntity")]
+    [Table("Procedure")]
     public partial class ProcedureEntity
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -16,17 +16,22 @@ namespace StomatologyProject
         }
 
         [Key]
-        public long id_procedure { get; set; }
+        [Column("id_procedure")]
+        public long Procedureld { get; set; }
 
-        public long id_doctor { get; set; }
+        [Column("id_doctor")]
+        public long Doctorld { get; set; }
 
-        public long id_assistant { get; set; }
+        [Column("id_assistant")]
+        public long Assistantld { get; set; }
 
         [Required]
         [StringLength(2147483647)]
-        public string procedure_description { get; set; }
+        [Column("procedure_description")]
+        public string Proceduredescription { get; set; }
 
-        public long price { get; set; }
+        [Column("price")]
+        public long Price { get; set; }
 
         public virtual AssistantEntity Assistant { get; set; }
 
@@ -35,4 +40,5 @@ namespace StomatologyProject
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EntryEntity> Entry { get; set; }
     }
+
 }

@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace StomatologyProject.ViewModels
 {
-    internal class Class5
+    public class ProcedureViewModel
     {
+        public long Id { get; set; }
+        public string Description { get; set; }
+        public long Price { get; set; }
+        public AssistantEntity Assistant { get; set; }
+        public DoctorEntity Doctor { get; set; }
+        public List<EntryEntity> Entry { get; set; }
     }
 }

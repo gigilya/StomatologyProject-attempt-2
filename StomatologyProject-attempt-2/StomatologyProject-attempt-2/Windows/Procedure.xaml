@@ -1,0 +1,89 @@
+﻿<Window x:Class="StomatologyProject_attempt_2.Windows.Procedure"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StomatologyProject_attempt_2.Windows"
+        mc:Ignorable="d"
+           WindowStartupLocation="CenterScreen"
+    Title="Процедуры" Height="700" Width="900" MinHeight="650" MinWidth="900">
+    <Grid>
+        <StackPanel>
+            <Canvas Height="100">
+                <Button x:Name="MenuButton"
+                    Style="{StaticResource MaterialDesignFlatButton}" 
+                    Click="MenuButton_Click"
+                    Canvas.Right="20" 
+                    Canvas.Top="20" 
+                    Cursor="Hand" 
+                    Foreground="#FF698AFF">
+                    <Image Source="\Resurs\arrow-left.png" />
+                </Button>
+                <Image Source="\Resurs\toothbrush-paste.png" 
+                   HorizontalAlignment="Center" 
+                   Height="60" 
+                   VerticalAlignment="Top"/>
+                <Label Content="Клуб зубастиков" 
+                   Canvas.Left="65" 
+                   Canvas.Top="18" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top" 
+                   FontSize="16" 
+                   FontFamily="Arial" 
+                   FontWeight="Bold"/>
+            </Canvas>
+            <DataGrid x:Name="TableProcedure" 
+                    Style="{StaticResource MaterialDesignDataGrid}"
+                    MinHeight="450"
+                    MinWidth="650"
+                    HorizontalAlignment="Center" 
+                    AutoGenerateColumns="False"
+                    Margin="10,0,0,0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Doctor.Lastname}" CanUserReorder="False"/>
+                    <DataGridTextColumn Header="ФИО Врача" Binding="{Binding Doctor.Name}" CanUserReorder="False"/>
+                    <DataGridTextColumn Binding="{Binding Doctor.Middlename}" CanUserReorder="False"/>
+                    <DataGridTextColumn Binding="{Binding Assistant.Name}" CanUserReorder="False"/>
+                    <DataGridTextColumn Header="Фио Ассистента" Binding="{Binding Assistant.Lastname}" CanUserReorder="False"/>
+                    <DataGridTextColumn Binding="{Binding Assistant.Middlename}" CanUserReorder="False"/>
+                    <DataGridTextColumn Header="Наименование" Binding="{Binding Description}" CanUserReorder="False"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Price}" CanUserReorder="False"/>
+                </DataGrid.Columns>
+            </DataGrid>
+                <!--<Button x:Name="Return_Button" 
+                    
+                        Style="{StaticResource MaterialDesignFlatButton}" 
+                        FontFamily="Arial" 
+                        Cursor="Hand" 
+                        Foreground="#FF698AFF"
+                        VerticalAlignment="Top"
+                        Margin="5,0,0,0">
+                    <Image Source="\Resurs\arrow-u-left-bottom.png"/>
+                </Button>-->
+
+            <!--<Grid MinWidth="450" Height="85" HorizontalAlignment="Center" Margin="10,0,10,0">
+                <Button x:Name="AddButton"
+                    Content="Добавить" 
+                    HorizontalAlignment="Left" 
+                    Background="#FF698AFF" 
+                    BorderBrush="#FF698AFF" 
+                    FontFamily="Arial"
+                    FontSize="14"/>
+                <Button x:Name="DeletButton"
+                    Content="Удалить" 
+                    HorizontalAlignment="Center" 
+                    Background="#FF698AFF" 
+                    BorderBrush="#FF698AFF" 
+                    FontFamily="Arial" 
+                    FontSize="14"/>
+                <Button x:Name="UpdateButton"
+                    Content="Обновить"
+                    HorizontalAlignment="Right"
+                    Background="#FF698AFF" 
+                    BorderBrush="#FF698AFF" 
+                    FontFamily="Arial" 
+                    FontSize="14"/>
+            </Grid>-->
+        </StackPanel>
+    </Grid>
+</Window>

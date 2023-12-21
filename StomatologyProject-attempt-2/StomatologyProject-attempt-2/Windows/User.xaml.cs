@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace StomatologyProject_attempt_2.Windows
+{
+    /// <summary>
+    /// Логика взаимодействия для User.xaml
+    /// </summary>
+    public partial class User : Window
+    {
+        public User()
+        {
+            InitializeComponent();
+        }
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            Menu menuWindow = new Menu();
+            this.Close();
+            menuWindow.ShowDialog();
+        }
+
+        private void AuthButton_Click(object sender, RoutedEventArgs e)
+        {
+            Auth authWindow = new Auth();
+            this.Close();
+            authWindow.ShowDialog();
+        }
+    }
+}

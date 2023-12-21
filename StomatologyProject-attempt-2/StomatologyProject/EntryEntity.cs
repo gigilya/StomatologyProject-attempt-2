@@ -6,24 +6,29 @@ namespace StomatologyProject
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("EntryEntity")]
+    [Table("Entry")]
     public partial class EntryEntity
     {
         [Key]
-        public long id_entry { get; set; }
+        [Column("id_entry")]
+        public long Entryld { get; set; }
 
-        public long id_patient { get; set; }
+        [Column("id_patient")]
+        public long Patientld { get; set; }
 
-        public long id_procedure { get; set; }
+        [Column("id_procedure")]
+        public long Procedureld { get; set; }
 
         [Required]
         [StringLength(2147483647)]
-        public string date_receipt { get; set; }
+        [Column("date_receipt")]
+        public string Datereceipt { get; set; }
 
-        public long status_receipt { get; set; }
-
-        public virtual PatientEntity Patient { get; set; }
+        [Column("status_receipt")]
+        public long Statusreceipt { get; set; }
 
         public virtual ProcedureEntity Procedure { get; set; }
+
+        public virtual PatientEntity Patient { get; set; }
     }
 }

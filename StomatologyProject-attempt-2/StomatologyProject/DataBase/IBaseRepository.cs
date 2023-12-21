@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace StomatologyProject.DataBase
 {
-    internal class Class3
+    public interface IBaseRepository<TEntity>
     {
+        TEntity GetById(long id);
+        List<TEntity> GetList();
+        TEntity Update(TEntity entity);
+        TEntity Delete(long id);
+        TEntity Add(TEntity entity);
     }
 }

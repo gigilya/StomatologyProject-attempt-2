@@ -6,7 +6,7 @@ namespace StomatologyProject
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("PatientEntity")]
+    [Table("Patient")]
     public partial class PatientEntity
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -16,34 +16,43 @@ namespace StomatologyProject
         }
 
         [Key]
-        public long id_patient { get; set; }
+        [Column("id_patient")]
+        public long Patientld { get; set; }
 
-        public long id_user { get; set; }
+        [Column("id_user")]
+        public long Userld { get; set; }
 
-        public long last_name { get; set; }
-
-        [Required]
-        [StringLength(2147483647)]
-        public string name { get; set; }
-
-        [StringLength(2147483647)]
-        public string middle_name { get; set; }
+        [Column("last_name")]
+        public string Lastname { get; set; }
 
         [Required]
         [StringLength(2147483647)]
-        public string gender { get; set; }
+        [Column("name")]
+        public string Name { get; set; }
+
+        [StringLength(2147483647)]
+        [Column("middle_name")]
+        public string Middlename { get; set; }
 
         [Required]
         [StringLength(2147483647)]
-        public string birthday { get; set; }
+        [Column("gender")]
+        public string Gender { get; set; }
 
         [Required]
         [StringLength(2147483647)]
-        public string address { get; set; }
+        [Column("birthday")]
+        public string Birthday { get; set; }
 
         [Required]
         [StringLength(2147483647)]
-        public string contact_info { get; set; }
+        [Column("address")]
+        public string Address { get; set; }
+
+        [Required]
+        [StringLength(2147483647)]
+        [Column("contact_info")]
+        public string Contactinfo { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EntryEntity> Entry { get; set; }

@@ -6,7 +6,7 @@ namespace StomatologyProject
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("SpecializationEntity")]
+    [Table("Specialization")]
     public partial class SpecializationEntity
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -17,17 +17,21 @@ namespace StomatologyProject
         }
 
         [Key]
-        public long id_specialization { get; set; }
+        [Column("id_specialization")]
+        public long Specializationld { get; set; }
 
         [Required]
         [StringLength(2147483647)]
-        public string name { get; set; }
+        [Column("name")]
+        public string Name { get; set; }
 
-        public long wages { get; set; }
+        [Column("wages")]
+        public long Wages { get; set; }
 
         [Required]
         [StringLength(2147483647)]
-        public string work_schedule { get; set; }
+        [Column("work_schedule")]
+        public string Workschedule { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AssistantEntity> Assistant { get; set; }

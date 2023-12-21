@@ -6,7 +6,7 @@ namespace StomatologyProject
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("DoctorEntity")]
+    [Table("Doctor")]
     public partial class DoctorEntity
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -16,26 +16,33 @@ namespace StomatologyProject
         }
 
         [Key]
-        public long id_doctor { get; set; }
+        [Column("id_doctor")]
+        public long Doctorld { get; set; }
 
-        public long id_user { get; set; }
-
-        [Required]
-        [StringLength(2147483647)]
-        public string last_name { get; set; }
+        [Column("id_user")]
+        public long Userld { get; set; }
 
         [Required]
         [StringLength(2147483647)]
-        public string name { get; set; }
-
-        [StringLength(2147483647)]
-        public string middle_name { get; set; }
-
-        public long id_specialization { get; set; }
+        [Column("last_name")]
+        public string Lastname { get; set; }
 
         [Required]
         [StringLength(2147483647)]
-        public string contact_info { get; set; }
+        [Column("name")]
+        public string Name { get; set; }
+
+        [StringLength(2147483647)]
+        [Column("middle_name")]
+        public string Middlename { get; set; }
+
+        [Column("id_specialization")]
+        public long Specializationld { get; set; }
+
+        [Required]
+        [StringLength(2147483647)]
+        [Column("contact_info")]
+        public string Contactinfo { get; set; }
 
         public virtual UserEntity User { get; set; }
 
